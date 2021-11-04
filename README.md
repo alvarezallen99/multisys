@@ -24,6 +24,7 @@ DB_PASSWORD=null
 ```
 4. run this command
 ```
+composer install
 php artisan key:generate
 php artisan jwt:secret
 php artisan migrate --seed
