@@ -37,6 +37,6 @@ php artisan serve --host=127.0.0.1 --port=8000
 https://multisys.wixvpn.com
 
 ## Live Temporary API
-https://multisys.wixvpn.com/api/register
-https://multisys.wixvpn.com/api/login
-https://multisys.wixvpn.com/api/order
+https://multisys.wixvpn.com/api/register<br>
+https://multisys.wixvpn.com/api/login<br>
+https://multisys.wixvpn.com/api/order<br>
