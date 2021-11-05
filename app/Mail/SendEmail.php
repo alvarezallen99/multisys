@@ -28,7 +28,7 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('multisys')
+        return $this->subject('Multisys')
             ->view('email.registered');
     }
 }

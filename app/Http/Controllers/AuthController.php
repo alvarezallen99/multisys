@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendEmailJob;
+use App\Mail\SendEmail;
 use App\Models\LoginLog;
 use App\Models\User;
 use DateTime;
@@ -61,11 +62,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
+            // 'email' => 'required|email|unique:users',
             'password' => 'required|string|min:5',
         ],
         [ 'email.unique' => 'Email already taken']);
-
         if ($validator->fails()) {
             return response()->json(['message' => $validator->errors()->first()], 400);
         }
@@ -75,7 +75,7 @@ class AuthController extends Controller
             ['password' => bcrypt($request->password)]
         ));
 
-        dispatch(new SendEmailJob($request->email));
+        (new SendEmailJob($request->email));
         return response()->json([
             'message' => 'User successfully registered'
         ], 201);
