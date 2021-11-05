@@ -75,7 +75,7 @@ class AuthController extends Controller
             ['password' => bcrypt($request->password)]
         ));
 
-        (new SendEmailJob($request->email));
+        dispatch(new SendEmailJob($request->email));
         return response()->json([
             'message' => 'User successfully registered'
         ], 201);
